@@ -9,7 +9,7 @@ class Usuario(Base):
 
     id = Column(BigInteger, primary_key=True)
     email = Column(String(255), unique=True, nullable=False)
-    password = Column(String(20), nullable=False)
+    password = Column(String(255), nullable=False)
     name = Column(String(255))
     birth_date = Column(Date)
     cellphone = Column(Integer)
@@ -23,7 +23,6 @@ class Usuario(Base):
     register_date = Column(Date, nullable=False)
     status = Column(String(10))
     social_media = Column(Text)
-    nueva = Column(String(255))
 
     def set_password(self, password_user: str):
         self.hashed_password = hash_password(password_user)

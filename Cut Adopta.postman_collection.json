@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "46e14156-ae11-42e6-9111-c6bdb468a802",
+		"name": "Cut Adopta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39696881"
+	},
+	"item": [
+		{
+			"name": "obtener usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/usuarios",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"psanchez@gmail.com\",\n    \"password\": \"9429sgg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"psanchez@gmail.com\",\n    \"password\": \"9429sgg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Pedro\",\n    \"email\": \"psanchez@gmail.com\",\n    \"password\": \"9sgg\",\n    \"confirm_password\": \"9sgg\",\n    \"role\": \"user\",\n    \"register_date\": \"2025/02/16\",\n    \"status\": \"true\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/crear_usuario",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"crear_usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": null,\n    \"birth_date\": null,\n    \"street\": null,\n    \"suburb\": null,\n    \"state\": null,\n    \"role\": null,\n    \"status\": \"false\",\n    \"nueva\": null,\n    \"email\": \"psanchez@gmail.com\",\n    \"name\": null,\n    \"cellphone\": null,\n    \"house_number\": null,\n    \"city\": null,\n    \"postal_code\": null,\n    \"register_date\": null,\n    \"social_media\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/actualizar_usuario",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"actualizar_usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/usuarios/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

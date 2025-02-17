@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="PerfilUsuarioStyleSheetInputs.css">
+    <!-- <link rel="stylesheet" href="../Styles/PerfilUsuario.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="ContainerPerfil">
+        <div class="wrapper">
+            <div class="SeccionIzquierda">
+                <div class="fondoImagen" onclick="document.getElementById('profilePictureUpload').click();">
+                    <!-- <label for="profilePicture">Foto de perfil</label> -->
+                    <input type="file" id="profilePictureUpload" accept="image/*" onchange="loadFile(event)" />
+                    <img id="profilePicture" src="../Assets/avatar.png" alt="Foto de perfil" />
+                </div>
+                <!-- <script>
+                    var loadFile = function(event) {
+                        var image = document.getElementById('profilePicture');
+                        image.src = URL.createObjectURL(event.target.files[0]);
+                    };
+                </script> -->
+                <div class="textosIzquierda">
+
+                    <div class="form-group">
+                        <label class="ApartadoEnNegritas" for="fullName">Nombres y apellidos</label>
+                        <input type="text" id="fullName" placeholder="[Nombre completo]">
+    
+                    </div>
+                    <div class="form-group">
+                        <label class="ApartadoEnNegritas" for="birthDate">Fecha de nacimiento</label>
+                        <input type="date" id="birthDate" placeholder="[Fecha de nacimiento]">
+                    </div>
+                    <div class="form-group">
+                        <label class="ApartadoEnNegritas" for="registrationDate">Fecha de registro</label>
+                        <input type="date" id="registrationDate" placeholder="[Fecha de registro]">
+                    </div>
+                    <div class="botonEditar">
+                        <button type="button" class="BotonEditarPerfil">Guardar</button>
+                    </div>
+
+                </div>
+                
+            </div>
+
+
+            <div class="SeccionDerecha">
+                <div class="BloqueSuperior">
+                    <h3>Tu Información</h3>
+                    <hr>
+                    <div class="emaiilYTelefono">
+                    <div class="caja">
+
+                        <label class="ApartadoEnNegritas" for="email">Email</label>
+                        <input type="email" id="email" placeholder="[Email]">
+                    </div>
+                  <div class="caja2">
+                    <label class="ApartadoEnNegritas" for="phone">Teléfono</label>
+                    <input type="tel" id="phone" placeholder="[Teléfono]">
+                  </div>
+                  
+                </div>
+                </div>
+                <div class="BloqueInferior">
+                    <div class="Izquierda">
+                        <h3>Dirección</h3>
+                        <hr>
+                        <label class="ApartadoEnNegritas" for="state">Estado</label>
+                        <input type="text" id="state" placeholder="[Estado]">
+                        <label class="ApartadoEnNegritas" for="ciudad">Ciudad</label>
+                        <input type="text" id="state" placeholder="[Ciudad]">
+                        
+                        <label  class="ApartadoEnNegritas"  for="street">Calle</label>
+                        <input type="text" id="street" placeholder="[Calle]">
+                        <label  class="ApartadoEnNegritas"  for="colony">Colonia</label>
+                        <input type="text" id="colony" placeholder="[Colonia]">
+                        <label  class="ApartadoEnNegritas"  for="postalCode">Código Postal</label>
+                        <input type="text" id="postalCode" placeholder="[Código Postal]">
+                        <label  class="ApartadoEnNegritas"  for="houseNumber">Número de Casa</label>
+                        <input type="text" id="houseNumber" placeholder="[Número de Casa]">
+                    </div>
+                    <div class="Derecha">
+                        <h3>Cuenta</h3>
+                        <hr>
+                        <div class="containerIconoes">
+                        <label class="ApartadoEnNegritas" for="accountStatus">Estado de Cuenta</label>
+                        <input type="text" id="accountStatus" placeholder="[Estado de Cuenta]">
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com" target="_blank">
+                                <i class="mdi mdi-facebook"></i>
+                            </a>
+                            <a href="https://www.twitter.com" target="_blank">
+                                <i class="mdi mdi-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank">
+                                <i class="mdi mdi-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+</body>
+
+</html>

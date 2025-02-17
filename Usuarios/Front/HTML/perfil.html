@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/perfil.css">
+
+    <!--Fuentes de Google Fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+    <title>Iniciar Sesión</title>
+</head>
+<body class="cuerpoPagina">
+    
+    <div class="contenedor_1">
+        <button class="inicio" >← Volver</button>
+        <script>
+            document.querySelector('.inicio').addEventListener('click', function() {
+                window.history.back();
+            });
+        </script>
+
+    </div>
+
+<div class="contenido_formulario">
+        
+
+    <div class="caja1">
+
+        <label for="file-upload" class="custom-file-upload">
+            <img src="../Assets/avatar.png" alt="Subir Imagen" class="upload-icon">
+        </label>
+
+        <input id="file-upload" type="file" accept="image/*"/>
+        <p id="foto">Foto de Perfil</p>
+
+    </div>
+
+    <div class="caja2">
+        <p class="tex">Nombre de Usuario:</p>
+        <input  class="texto" type="text" required maxlength="100">
+
+        <p class="tex">Tu Nombre:</p>
+        <input  class="texto" type="text" required maxlength="100">
+
+        <p class="tex">Tus Apellidos:</p>
+        <input  class="texto" type="text" required maxlength="100">
+
+        <p class="tex">Correo:</p>
+        <input  class="texto" type="text" placeholder="ejemplo@gmail.com" required maxlength="200">
+
+        <button class="botonGuardar">Guardar<img class="guardarImagen" src="../Assets/guardar.png" alt="Guardar"></button>
+        
+    </div>
+
+</div>
+
+    <footer class="piePagina"></footer>
+
+
+    <div class="footer">
+        <ul class="social-icon">
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+            </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+            </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-linkedin"></ion-icon>
+            </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+            </a></li>
+        </ul>
+        <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="#">Arriba</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Acerca de</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Contáctanos</a></li>
+    
+        </ul>
+        <p>&copy;2024 Universidad de Guadalajara | Todos los derechos reservados</p>
+    </div>
+
+    <!-- Footer -->
+    
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+</html>

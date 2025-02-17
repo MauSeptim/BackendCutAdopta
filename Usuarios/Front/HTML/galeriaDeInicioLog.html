@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/galeriaDeInicioLog.css">
+
+    <!-- Fuentes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Galeria de Inicio</title>
+</head>
+<body class="cuerpoPagina">
+    
+    <div class="contenedor_1">
+        <img id="0" src="../Assets/Huella blanca.png" alt="Huella Blanca">
+        <h1 class="nombrePagina">CUT-Adopta</h1>
+    </div>
+
+    <div class="contenedor_2">
+        <button class="menu-toggle"><img id="5" src="../Assets/menu.png" alt="menu"></button>
+        <!-- Botón con imagen, invisible excepto por el icono -->
+        <button id="toggleFiltersButton" class="invisible-button">
+            <img id="1" src="../Assets/filtro.png" alt="menu">
+        </button>
+
+        <input type="text" class="buscador" id="buscador" placeholder="Buscar">
+
+        <a href="#" class="buscar">
+            <img id="2" src="../Assets/icono-buscar.png" alt="Buscar">
+        </a>
+
+        <a href="donar.html" class="donar">Donar</a>
+        <a href="perfil.html" class="menu-toggle"><img src="../Assets/avatar.png" alt="Perfil de usuario" style="width: 40px,; height: 40px; margin-top: 15px;"></a>
+    </div>
+
+    <div class="overlay"></div>
+    <!-- Menú desplegable -->
+    <nav class="menu-container">
+        <div class="menu-item">
+            <button class="menu-btn">Tema</button>
+            <div class="submenu">
+                <a href="galeriaDeInicioOscuroInvitado.html">Oscuro</a>
+                <a href="galeriaDeInicioLog.html">Claro</a>
+            </div>
+        </div>
+        
+        <div class="menu-item">
+            <p style="font-size: 1.6rem; color: black; font-weight: bold;">Traducir</p>
+            <div id="google_translate_element"></div>            
+        </div>
+    </nav>
+    <script src="https://translate.google.com/translate_a/element.js?cb=initTraduccion"></script>
+<script>
+function initTraduccion() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'es',
+    includedLanguages: 'en,es',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+
+  // Obtener el elemento de traducción
+  var translateElement = document.getElementById('google_translate_element');
+
+  // Establecer un estilo personalizado
+  translateElement.style.width = '150px';
+  translateElement.style.height = '75px';
+}
+</script>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuContainer = document.querySelector('.menu-container');
+        const overlay = document.querySelector('.overlay');
+        
+        // Función para abrir el menú
+        function openMenu() {
+            menuContainer.classList.add('active');
+            overlay.classList.add('active');
+        }
+        
+        // Función para cerrar el menú
+        function closeMenu() {
+            menuContainer.classList.remove('active');
+            overlay.classList.remove('active');
+            // También cerramos todos los submenús
+            document.querySelectorAll('.submenu.active').forEach(submenu => {
+                submenu.classList.remove('active');
+            });
+        }
+        
+        // Toggle menú principal
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (menuContainer.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+        
+        // Cerrar al hacer click en el overlay
+        overlay.addEventListener('click', closeMenu);
+        
+        // Toggle submenús
+        document.querySelectorAll('.menu-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                // Cierra todos los otros submenús
+                document.querySelectorAll('.submenu.active').forEach(submenu => {
+                    if (submenu !== this.nextElementSibling) {
+                        submenu.classList.remove('active');
+                    }
+                });
+                // Toggle el submenu actual
+                this.nextElementSibling.classList.toggle('active');
+            });
+        });
+        
+        // Prevenir que los clicks dentro del menú lo cierren
+        menuContainer.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        </script>
+
+
+
+    <div class="contenedor_3">
+        <a href="#" class="opcionPrincipal">Galería<br>de Adopción</a>
+        <a href="solicitarPublicacion.html" class="opciones">Solicitar<br>Publicación</a>
+        <a href="seguimientoTramites.html" class="opciones">Seguimiento<br>de Trámites</a>
+    </div>
+
+
+
+    <!-- Contenedor de filtros oculto inicialmente -->
+    <div class="contenedorFiltros">
+        <div id="filtersContainer" class="filters-container">
+            <h2>Filtros</h2>
+            <form id="filterForm">
+                <!-- Filtro de Nombre -->
+                <div id="filtroNombre" class="filter-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" placeholder="Introduce un nombre">
+                </div>
+
+                <!-- Rango de Edad -->
+                <div class="filter-group">
+                    <label>Edad:</label>
+                    <div class="range-group">
+                        <input type="number" id="minAge" name="minAge" min="0" placeholder="Mínima">
+                        <span>–</span>
+                        <input type="number" id="maxAge" name="maxAge" min="0" placeholder="Máxima">
+                    </div>
+                </div>
+
+                <!-- Rango de Talla -->
+                <div class="filter-group">
+                    <label>Talla (cm):</label>
+                    <div class="range-group">
+                        <input type="number" id="minSize" name="minSize" min="0" placeholder="Mínima">
+                        <span>–</span>
+                        <input type="number" id="maxSize" name="maxSize" min="0" placeholder="Máxima">
+                    </div>
+                </div>
+
+                <!-- Selección de Sexo -->
+                <div class="filter-group">
+                    <label for="gender">Sexo:</label>
+                    <select id="gender" name="gender">
+                        <option value="">Cualquiera</option>
+                        <option value="Macho">Macho</option>
+                        <option value="Hembra">Hembra</option>
+                    </select>
+                </div>
+
+                <!-- Selección de Esterilización -->
+                <div class="filter-group">
+                    <label for="sterilized">Esterilización:</label>
+                    <select id="sterilized" name="sterilized">
+                        <option value="">Cualquiera</option>
+                        <option value="Esterilizado">Esterilizado</option>
+                        <option value="Sin esterilizar">Sin esterilizar</option>
+                    </select>
+                </div>
+
+                <!-- Botón Aplicar -->
+                <div class="filter-group">
+                    <button type="submit" class="apply-button">Aplicar Filtros</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('toggleFiltersButton').addEventListener('click', function () {
+            const filtersContainer = document.getElementById('filtersContainer');
+            filtersContainer.style.display =
+                filtersContainer.style.display === 'none' || !filtersContainer.style.display
+                    ? 'block'
+                    : 'none';
+        });
+    </script>
+
+    <div class="container">
+        <div class="pets-grid">
+            <!-- Card 1 -->
+            <div class="pet-card">
+                <img src="../Assets/Perro1.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Momo</h3>
+                        <span>♀️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Momo, una perrita llena de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img src="../Assets/Perro2.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Max</h3>
+                        <span>♂️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Max, un perrito lleno de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img src="../Assets/Perro3.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Bella</h3>
+                        <span>♀️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Bella, una perrita llena de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img src="../Assets/Perro4.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Rockie</h3>
+                        <span>♂️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Rockie, un perrito lleno de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+        <div class="pets-grid">
+            <!-- Card 1 -->
+            <div class="pet-card">
+                <img src="../Assets/Perro14.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Luna</h3>
+                        <span>♀️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Luna, una perrita llena de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img src="../Assets/Perro15.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Toby</h3>
+                        <span>♂️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Toby, un perrito lleno de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img src="../Assets/Perro16.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Maya</h3>
+                        <span>♀️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Maya, una perrita llena de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img src="../Assets/Perro8.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Bruno</h3>
+                        <span>♂️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Bruno, un perrito lleno de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+        <div class="pets-grid">
+            <!-- Card 1 -->
+            <div class="pet-card">
+                <img src="../Assets/Perro9.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Daisy</h3>
+                        <span>♀️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Daisy, una perrita llena de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img src="../Assets/Perro10.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Rex</h3>
+                        <span>♂️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Rex, un perrito lleno de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img src="../Assets/Perro11.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Kira</h3>
+                        <span>♀️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Kira, una perrita llena de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img src="../Assets/Perro12.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Duke</h3>
+                        <span>♂️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Duke, un perrito lleno de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+        <div class="pets-grid">
+            <!-- Card 1 -->
+            <div class="pet-card">
+                <img src="../Assets/Perro13.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Mila</h3>
+                        <span>♀️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Mila, una perrita llena de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img src="../Assets/Perro5.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Simba</h3>
+                        <span>♂️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Simba, un perrito lleno de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img src="../Assets/Perro6.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Coco</h3>
+                        <span>♂️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Coco, un perrito lleno de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img src="../Assets/Perro7.png" alt="Momo">
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h3 class="pet-name">Zeus</h3>
+                        <span>♂️</span>
+                    </div>
+                    <p class="pet-description">Conoce a Zeus, un perrito lleno de amor y ternura. ¡Cambia su vida para siempre!</p>
+                    <a href="#" class="ver-detalles">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <a href="dogclassifier://" class="identificador">🐕</a>
+
+
+
+
+
+
+
+    <!-- Footer -->
+        <footer class="footer">
+            <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+            </div>
+            <ul class="social-icon">
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-facebook"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-twitter"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-linkedin"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-instagram"></ion-icon>
+                </a></li>
+            </ul>
+            <ul class="menu">
+            <li class="menu__item"><a class="menu__link" href="#">Arriba</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Acerca de</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Contáctanos</a></li>
+        
+            </ul>
+            <p>&copy;2024 Universidad de Guadalajara | Todos los derechos reservados</p>
+        </footer>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+
+</html>

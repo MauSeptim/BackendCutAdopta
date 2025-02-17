@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/login.css">
+
+    <!--Fuentes de Google Fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+    <title>Iniciar Sesión</title>
+</head>
+<body class="cuerpoPagina">
+    
+    <div class="contenedor_1">
+
+        <button class="inicio">← Atrás</button>
+        <script>
+            document.querySelector('.inicio').addEventListener('click', function() {
+                window.history.back();
+            });
+        </script>
+        <button class="menu-toggle"><img id="1" src="../Assets/menu.png" alt="menu"></button>
+
+    </div>
+
+    <div class="overlay"></div>
+    <!-- Menú desplegable -->
+    <nav class="menu-container">
+        <div class="menu-item">
+            <button class="menu-btn">Tema</button>
+            <div class="submenu">
+                <a href="loginOscuro.html">Oscuro</a>
+                <a href="login.html">Claro</a>
+            </div>
+        </div>
+        
+        <div class="menu-item">
+            <p style="font-size: 1.6rem; color: black; font-weight: bold;">Traducir</p>
+            <div id="google_translate_element"></div>            
+        </div>
+    </nav>
+    <script src="https://translate.google.com/translate_a/element.js?cb=initTraduccion"></script>
+<script>
+function initTraduccion() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'es',
+    includedLanguages: 'en,es',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+
+  // Obtener el elemento de traducción
+  var translateElement = document.getElementById('google_translate_element');
+
+  // Establecer un estilo personalizado
+  translateElement.style.width = '150px';
+  translateElement.style.height = '75px';
+}
+</script>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuContainer = document.querySelector('.menu-container');
+        const overlay = document.querySelector('.overlay');
+        
+        // Función para abrir el menú
+        function openMenu() {
+            menuContainer.classList.add('active');
+            overlay.classList.add('active');
+        }
+        
+        // Función para cerrar el menú
+        function closeMenu() {
+            menuContainer.classList.remove('active');
+            overlay.classList.remove('active');
+            // También cerramos todos los submenús
+            document.querySelectorAll('.submenu.active').forEach(submenu => {
+                submenu.classList.remove('active');
+            });
+        }
+        
+        // Toggle menú principal
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (menuContainer.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+        
+        // Cerrar al hacer click en el overlay
+        overlay.addEventListener('click', closeMenu);
+        
+        // Toggle submenús
+        document.querySelectorAll('.menu-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                // Cierra todos los otros submenús
+                document.querySelectorAll('.submenu.active').forEach(submenu => {
+                    if (submenu !== this.nextElementSibling) {
+                        submenu.classList.remove('active');
+                    }
+                });
+                // Toggle el submenu actual
+                this.nextElementSibling.classList.toggle('active');
+            });
+        });
+        
+        // Prevenir que los clicks dentro del menú lo cierren
+        menuContainer.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        </script>
+
+    <!-- Mi parte del código empieza aquí-->
+    <div>
+        <p class="bienvenida">Bienvenido a</p>
+        <h1 class="titulo">CUT-Adopta</h1>
+    </div>
+
+    <div class="contenedorFormulario">
+
+        <div class="caja1">
+
+            <img src="../Assets/Husky 1.1.png" alt="Husky" class="imagen">
+
+        </div>
+
+        <div class="caja2">
+
+            
+            
+            <!-- En login.html, modifica los inputs -->
+            <p class="argumentos">Email:</p>
+            <input type="email" id="loginEmail" class="entradaDatos" required maxlength="200">
+
+            <p class="argumentos">Contraseña:</p>
+            <input type="password" id="loginPassword" class="entradaDatos" required maxlength="8">
+            <div id="mensajeContainer" class="mensaje"></div>
+
+            <button class="botonEntrar" id="loginButton">
+                <span>Entrar</span>
+                <div class="spinner" id="loginSpinner"></div>
+            </button>
+
+            <button class="contraseña">¿Olvidaste tu contraseña?</button>
+            
+
+        </div>
+
+    </div>
+
+    <div class="piePagina">
+
+        <p class="cuenta">¿No tienes una cuenta? <button class="registro"> REGÍSTRATE</button></p>
+        <script>
+            document.querySelector('.registro').addEventListener('click', function() {
+                window.location.href = 'registro.html';
+            });
+        </script>
+        <img id="3" src="../Assets/Huella blanca.png" alt="Huella blanca">        
+
+    </div>
+
+    <div class="footer">
+        <ul class="social-icon">
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+            </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+            </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-linkedin"></ion-icon>
+            </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+            </a></li>
+        </ul>
+        <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="#">Arriba</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Acerca de</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Contáctanos</a></li>
+    
+        </ul>
+        <p>&copy;2024 Universidad de Guadalajara | Todos los derechos reservados</p>
+    </div>
+
+    <!-- Footer -->
+    
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+  <script>
+    // Función para validar email
+    function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    // Función para mostrar mensajes
+    function mostrarMensaje(mensaje, tipo) {
+        const mensajeContainer = document.getElementById('mensajeContainer');
+        mensajeContainer.textContent = mensaje;
+        mensajeContainer.className = `mensaje mensaje-${tipo}`;
+        mensajeContainer.style.display = 'block';
+
+        // Ocultar mensaje después de 5 segundos
+        setTimeout(() => {
+            mensajeContainer.style.display = 'none';
+        }, 5000);
+    }
+
+    document.getElementById('loginButton').addEventListener('click', async function(e) {
+        e.preventDefault();
+        
+        const email = document.getElementById('loginEmail').value.trim();
+        const password = document.getElementById('loginPassword').value;
+        const spinner = document.getElementById('loginSpinner');
+        const buttonText = this.querySelector('span');
+
+        // Validaciones
+        if (!email || !password) {
+            mostrarMensaje('Por favor, completa todos los campos', 'error');
+            return;
+        }
+
+        if (!isValidEmail(email)) {
+            mostrarMensaje('Por favor, ingresa un email válido', 'error');
+            return;
+        }
+
+        try {
+            // Mostrar spinner y deshabilitar botón
+            spinner.style.display = 'inline-block';
+            buttonText.textContent = 'Iniciando sesión...';
+            this.disabled = true;
+
+            const response = await fetch('http://localhost:8000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                mostrarMensaje('¡Inicio de sesión exitoso!', 'exito');
+                localStorage.setItem('token', data.access_token);
+                localStorage.setItem('userData', JSON.stringify(data.user));
+                
+                // Redireccionar después de un breve delay
+                setTimeout(() => {
+                    window.location.href = 'galeriaDeInicioLog.html';
+                }, 1000);
+            } else {
+                const mensajesError = {
+                    404: 'Usuario no encontrado',
+                    401: 'Contraseña incorrecta',
+                    403: 'Cuenta deshabilitada',
+                    500: 'Error en el servidor'
+                };
+                mostrarMensaje(mensajesError[response.status] || data.detail, 'error');
+            }
+        } catch (error) {
+            mostrarMensaje('Error al conectar con el servidor', 'error');
+            console.error('Error:', error);
+        } finally {
+            // Ocultar spinner y habilitar botón
+            spinner.style.display = 'none';
+            buttonText.textContent = 'Entrar';
+            this.disabled = false;
+        }
+    });
+</script>
+
+
+</body>
+</html>

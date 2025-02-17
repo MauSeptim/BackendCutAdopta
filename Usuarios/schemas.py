@@ -17,6 +17,7 @@ class UsuarioLogin(BaseModel):
 
 class UsuarioActualizar(BaseModel):
 
+    email: Optional[str] = None
     password: Optional[str] = None
     name: Optional[str] = None
     birth_date: Optional[str] = None

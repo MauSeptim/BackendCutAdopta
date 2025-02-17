@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="PerfilUsuarioStyleSheet.css">
+    <!-- <link rel="stylesheet" href="../Styles/PerfilUsuario.css"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/PerfilUsuarioStyleSheet.css">
+
+    <!--Fuentes de Google Fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="contenedor_1">
+
+        <button class="inicio">← Atrás</button>
+        <script>
+            document.querySelector('.inicio').addEventListener('click', function() {
+                window.history.back();
+            });
+        </script>
+
+    </div>
+
+
+
+    <div class="ContainerPerfil">
+        <div class="wrapper">
+            <div class="SeccionIzquierda">
+                <div class="fondoImagen">
+                    <!-- <label for="profilePicture">Foto de perfil</label> -->
+                    <img id="profilePicture" src="../Assets/avatar.png" alt="Foto de perfil" />
+                </div>
+                <div class="textosIzquierda">
+
+                    <div class="form-group">
+                        <label class="ApartadoEnNwegritas" for="fullName">Nombres y apellidos</label>
+                        <p id="fullName">[Nombre completo]</p>
+                        <hr>
+    
+                    </div>
+                    <div class="form-group">
+                        <label class="ApartadoEnNegritas" for="birthDate">Fecha de nacimiento</label>
+                        <p id="birthDate">[Fecha de nacimiento]</p>
+                        <hr>
+                    </div>
+                    <div class="form-group">
+                        <label class="ApartadoEnNegritas" for="registrationDate">Fecha de registro</label>
+                        <p id="registrationDate">[Fecha de registro]</p>
+                        <hr>
+                    </div>
+                    <div class="botonEditar">
+                        <button type="button" class="BotonEditarPerfil">Editar Perfil</button>
+                    </div>
+
+                </div>
+                
+            </div>
+
+
+            <div class="SeccionDerecha">
+                <div class="BloqueSuperior">
+                    <h3>Tu Información</h3>
+                    <hr>
+                    <div class="emaiilYTelefono">
+                    <div class="caja">
+
+                        <label class="ApartadoEnNegritas" for="email">Email</label>
+                        <p id="email">[Email]</p>
+                    </div>
+                  <div class="caja2">
+                    <label class="ApartadoEnNegritas" for="phone">Teléfono</label>
+                    <p id="phone">[Teléfono]</p>
+                  </div>
+                  
+                </div>
+                </div>
+                <div class="BloqueInferior">
+                    <div class="Izquierda">
+                        <h3>Dirección</h3>
+                        <hr>
+                        <label class="ApartadoEnNegritas" for="state">Estado</label>
+                        <p id="state">[Estado]</p>
+                        <label  class="ApartadoEnNegritas"  for="street">Calle</label>
+                        <p id="City">[Ciudad]</p>
+                        <label  class="ApartadoEnNegritas"  for="street">Ciudad</label>
+                        <p id="street">[Calle]</p>
+                        <label  class="ApartadoEnNegritas"  for="colony">Colonia</label>
+                        <p id="colony">[Colonia]</p>
+                        <label  class="ApartadoEnNegritas"  for="postalCode">Código Postal</label>
+                        <p id="postalCode">[Código Postal]</p>
+                        <label  class="ApartadoEnNegritas"  for="houseNumber">Número de Casa</label>
+                        <p id="houseNumber">[Número de Casa]</p>
+                    </div>
+                    <div class="Derecha">
+                        <h3>Cuenta</h3>
+                        <hr>
+                        <div class="containerIconoes">
+                        <label class="ApartadoEnNegritas" for="accountStatus">Estado de Cuenta</label>
+                        <p id="accountStatus">[Estado de Cuenta]</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com" target="_blank">
+                                <i class="mdi mdi-facebook"></i>
+                            </a>
+                            <a href="https://www.twitter.com" target="_blank">
+                                <i class="mdi mdi-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank">
+                                <i class="mdi mdi-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="footer">
+            <ul class="social-icon">
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-facebook"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-twitter"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-linkedin"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-instagram"></ion-icon>
+                </a></li>
+            </ul>
+            <ul class="menu">
+            <li class="menu__item"><a class="menu__link" href="#">Arriba</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Acerca de</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Contáctanos</a></li>
+        
+            </ul>
+            <p>&copy;2024 Universidad de Guadalajara | Todos los derechos reservados</p>
+        </div>
+        
+        <!-- Footer -->
+        
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        
+
+
+</body>
+
+</html>

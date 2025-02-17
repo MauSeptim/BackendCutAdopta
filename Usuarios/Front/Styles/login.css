@@ -1,0 +1,605 @@
+
+.cuerpoPagina{
+    margin: 0%;
+    padding: 0%;
+    background-color: #E7F0F1;
+    min-width: 198px;
+}
+
+.contenedorFormulario{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+}
+
+.contenedor_1{
+    display:flex;
+    height: 100px;
+    flex-wrap: wrap;
+    background-color: #BF592B;
+    width: 100%;
+    align-items: center;
+}
+
+.inicio{
+    border: 4px solid black;
+    border-radius: 30px;
+    height: 60px;
+    width: 140px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-left: 30px;
+}
+
+.inicio:hover{
+    background-color: black;
+    border: 4px solid white;
+    color: white;
+    transform: scale(1.08);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.caja1, .caja2{
+    width: 500px;
+}
+
+/*Botón del Filtro*/
+.menu-toggle{
+    background-color: #BF592B;
+    border: none;
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/*Imagen del Filtro*/
+[id="1"]{
+    width: 40px;
+    height: auto;
+    margin: 5px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+/*Cambio al pasar con el mause*/
+[id="1"]:hover{
+    background-image: url('../Assets/lista.png'); /* Imagen por defecto */
+    transform: scale(1.5); 
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    
+}
+
+/*Estilos para el menu*/
+.menu-container {
+    position: fixed;
+    left: -250px; /* Inicialmente oculto */
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background: #BF592B;
+    transition: left 0.3s ease;
+    z-index: 999;
+    padding-top: 20px;
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+/* Overlay para detectar clicks fuera del menú */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 998;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-container.active {
+    left: 0;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-btn {
+    background: white;
+    color: black;
+    font-size: 1.6rem;      /* Tamaño del texto */
+    font-weight: 700;     /* Grosor del texto */
+    border: solid 3px white;
+    border-radius: 20px;
+    width: 150px;
+    text-align: left;
+    cursor: pointer;
+    display: block;
+    
+    height: 50px;
+    text-align: center;
+
+
+}
+
+.menu-btn:hover {
+    background: black;
+    color: white;
+    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
+    transform: scale(1.08); 
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: black;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.submenu.active{
+    max-height: 500px; /* Altura máxima del submenu */
+    transition: max-height 0.3s ease;
+    border: solid 3px white;
+    
+    
+}
+
+.submenu a {
+    color: white;
+    padding: 15px;
+    padding-left: 30px;
+    text-decoration: none;
+    display: block;
+    font-size: 1.6rem;
+}
+
+
+.submenu a:hover {
+    background: #555;
+}
+
+.caja1{
+    min-width: 500px;
+}
+
+.imagen{
+    z-index: 999;
+    position: relative;
+    top: 55px;
+    width: 90%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.bienvenida{
+    margin: 0px;
+    font-size: 1.6em;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.titulo{
+    margin: 0px;
+    font-size: 4.5em;
+    font-weight: 700;
+    font-family: "kaushan Script", sans-serif;
+    color: #fe854f;
+    margin-top: 5px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.entradaDatos{
+    height: 60px;
+    width: 100%;
+    padding-left: 20px;
+    border: 2px solid #BF592B;
+    border-radius: 20px;
+    font-size: 1.6em;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+.entradaDatos:hover{
+    /*Linea interna*/
+    box-shadow: inset 0 0 0 5px black;
+}
+
+.argumentos{
+    font-size: 1.6em;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    white-space: nowrap;
+}
+
+.contraseña{
+    color: #BF592B;
+    font-size: 1.6em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    border: none;
+    background-color: #E7F0F1;
+    margin-top: 20px;
+    white-space: nowrap;
+}
+
+.botonEntrar{
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    height: 60px;
+    width: 190px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    font-size: 1.6em;
+    font-weight: 700;
+    background-color: #BF592B;
+    border: 4px solid black;
+    color: white;
+}
+
+.botonEntrar:hover{
+    background-color: black;
+    color: white;
+    border: 4px solid #BF592B;
+    transform: scale(1.08);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+/* ---------------------------------------------------------------*/
+
+
+
+
+
+/* Estilos para el spinner de carga */
+.spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ffffff;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilos para mensajes de error/éxito */
+.mensaje {
+    display: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.mensaje-error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef5350;
+}
+
+.mensaje-exito {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #66bb6a;
+}
+
+
+
+
+/* ---------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+.piePagina{
+    display: flex;
+    background-color: #BF592B;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+.cuenta{
+    font-family: "Poppins", sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 1.6em;
+    margin: auto;
+    margin-right: 0px;
+}
+
+.registro{
+    font-family: "Poppins", sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 1.0em;
+    border: none;
+    background-color: #BF592B;
+}
+
+.registro:hover{
+    color: black;
+    transform: scale(1.08);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+[id="3"]{
+    margin: auto;
+    margin-left: 5px;
+    position: relative;
+    z-index: 1;
+    width: 75px;
+    height: 70px;
+}
+
+
+
+/*Estilos para el footer*/
+
+.contenedorFooter{
+    
+    background-color: #BF592B;
+    color: white;
+    height: 500px;
+}
+  
+  .footer {
+    position: relative;
+    width: auto;
+    background: #BF592B;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .social-icon,
+  .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+  }
+  
+  .social-icon__item,
+  .menu__item {
+    list-style: none;
+  }
+  
+  .social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  .social-icon__link:hover {
+    transform: translateY(-10px);
+    transform: scale(1.5);
+  }
+  
+  .menu__link {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+  }
+  
+  .menu__link:hover {
+    opacity: 1;
+    transform: scale(1.3);
+    color: black;
+    font-weight: 700;
+  }
+  
+  .footer p {
+    color: #fff;
+    margin: 50px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  @keyframes animateWaves {
+    0% {
+      background-position-x: 1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position-x: -1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+  
+
+@media screen and (max-width: 977px) {
+    .entradaDatos{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 976px) {
+    .contenedorFormulario{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .entradaDatos{
+        font-size: 1.6rem;
+    }
+
+    .imagen{
+        display: block;
+        position: static;
+        width: 60%;
+        top: 0px;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .entradaDatos{
+        font-size: 1.3rem;
+    }
+
+    .bienvenida{
+        font-size: 1.3rem;
+    }
+
+    .titulo{
+        font-size: 3.5em;
+    }
+
+    .caja1{
+        min-width: 198px;
+    }
+
+    .imagen{
+        width: 50%;
+    }
+
+    .argumentos{
+        font-size: 1.3rem;
+    }
+
+    .contraseña{
+        font-size: 1.3rem;
+    }
+
+    [id="3"]{
+        display: none;
+    }
+
+    .cuenta{
+        font-size: 1.3rem;
+        margin: auto;
+    }
+
+    .registro{
+        font-size: 1.3rem;
+    }
+
+    .inicio{
+        font-size: 1.3rem;
+        height: 50px;
+        width: 120px;
+    }
+
+    .botonEntrar{
+        height: 50px;
+        width: 150px;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 328px) {
+    .entradaDatos{
+        font-size: 1.0rem;
+        height: 40px;
+    }
+
+    .bienvenida{
+        font-size: 1rem;
+    }
+
+    .titulo{
+        font-size: 2.0em;
+    }
+
+    .imagen{
+        width: 40%;
+    }
+
+    .argumentos{
+        font-size: 1.0rem;
+    }
+
+    .contraseña{
+        font-size: 1.0rem;
+    }
+
+    .cuenta{
+        font-size: 1.0rem;
+    }
+
+    .registro{
+        font-size: 1.0rem;
+    }
+
+    .inicio{
+        font-size: 1.0rem;
+        height: 40px;
+        width: 110px;
+    }
+
+    .botonEntrar{
+        height: 40px;
+        width: 140px;
+        font-size: 1.0rem;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .contraseña{
+        white-space: wrap;
+    }
+}
