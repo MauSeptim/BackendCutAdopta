@@ -24,3 +24,7 @@ pip install -r requirements.txt
 
 # Especificando host y puerto:
     uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+# Si es la primera vez que usas un Entorno Virtual:
+    Set-ExecutionPolicy RemoteSigned
+
